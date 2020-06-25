@@ -1,7 +1,7 @@
 "use strict";
-const todoForm = document.querySelector(".js-todoForm"),
-    todoInput = document.querySelector("js-todoInput"),
-    todoList = document.querySelector(".js-todoList");
+const todoForm = document.querySelector(".js-todoForm");
+const todoInput = document.querySelector(".js-todoInput");
+const todoList = document.querySelector(".js-todoList");
 
 const TODOS_LS = "todos";
 let toDosArray = [];
@@ -11,7 +11,7 @@ function loadToDos(){
     if(todos !== null){
         const todosValue = JSON.parse(todos);
         todosValue.forEach(function(todo){
-            paintToDo(todo.text);
+            paintTodo(todo.text);
         })
     }
 }
@@ -43,8 +43,8 @@ function paintTodo(text){
     saveTodo();
 }
 
-function saveTodo(todosObj){
-    localStorage.setItem(TODOS_LS, JSON.stringify(todosObj));
+function saveTodo(){
+    localStorage.setItem(TODOS_LS, JSON.stringify(toDosArray));
 }
 
 function deleteTodo(event){

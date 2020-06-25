@@ -25,3 +25,13 @@ body{
     z-index: 0;
     margin: 0 auto;
 }
+
+.greetingForm{
+    display: none;
+} 
+.showing{
+    display: block;
+}
+/* .greeting{
+    display: none;
+} */
